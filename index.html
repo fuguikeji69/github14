@@ -16,8 +16,11 @@
 
         body {
             min-height: 100vh;
-            background: url('./img/bj1.jpg') no-repeat center center fixed;
-            background-size: cover;
+            /* 关键修改：自适应宽度并贴着底部 */
+            background: url('./img/bj1.jpg') no-repeat bottom center;
+            background-size: contain;
+            background-attachment: fixed;
+            background-color: #000; /* 背景色用于填充空白区域 */
             position: relative;
             overflow: hidden;
             font-family: Arial, "Microsoft Yahei", sans-serif;
@@ -32,10 +35,9 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 15px;
-    /* 关键调整：扩大最大宽度并限制最小宽度 */
-            max-width: 70%; /* 比原来更大，容纳3列 */
-            min-width: 300px; /* 确保小屏幕也有基础宽度 */
-            width: auto; /* 自动适应内容宽度 */
+            max-width: 70%;
+            min-width: 300px;
+            width: auto;
         }
 
         /* 右下角链接样式 */
@@ -56,7 +58,7 @@
         }
 
         .image-link img {
-            min-width: 80px; /* 根据需要调整，确保图片不被压缩太小 */
+            min-width: 80px;
             width: 100%;
             height: auto;
             border-radius: 8px;
@@ -87,13 +89,15 @@
             .top-links {
                 gap: 10px;
                 max-width:90%;
-                right: 5%; /* 左右边距更均匀 */
+                right: 5%;
                 left: 5%;
             }
+            
             .bottom-link {
                 bottom: 10%;
                 right: 5%;
             }
+            
             .bottom-link img {
                 width: 120px !important;
             }
@@ -103,6 +107,7 @@
             .top-links {
                 gap: 20px;
             }
+            
             .image-link img {
                 min-width: 60px;
             }
@@ -125,10 +130,10 @@
         <a href="itms-services://?action=download-manifest&url=https://jt-asia.katechilko.com/xs1.plist" class="image-link" target="_blank">
             <img src="./img/bv1.png" alt="MJ名爵h5备用">
         </a>
-                <a href="https://app-asia.ruihejade.com/flyapp.com/v/500/xs_137461104_sign.apk" class="image-link" target="_blank">
+        <a href="https://app-asia.ruihejade.com/flyapp.com/v/500/xs_137461104_sign.apk" class="image-link" target="_blank">
             <img src="./img/bv2.png" alt="MJ名爵h5备用">
         </a>
-                <a href="http://rdwa4p3p.rcwvvw2ewa.com/" class="image-link" target="_blank">
+        <a href="http://rdwa4p3p.rcwvvw2ewa.com/" class="image-link" target="_blank">
             <img src="./img/bv3.png" alt="MJ名爵h5备用">
         </a>
     </div>
