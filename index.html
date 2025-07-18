@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有钱人的俱乐部</title>
+    <style>
+        /* 基础样式重置 */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: url('./img/bj1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+            font-family: Arial, "Microsoft Yahei", sans-serif;
+        }
+
+        /* 右上角链接容器 */
+
+        .top-links {
+            position: absolute;
+            top: 3%;
+            right: 3%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+    /* 关键调整：扩大最大宽度并限制最小宽度 */
+            max-width: 70%; /* 比原来更大，容纳3列 */
+            min-width: 300px; /* 确保小屏幕也有基础宽度 */
+            width: auto; /* 自动适应内容宽度 */
+        }
+
+        /* 右下角链接样式 */
+
+        .bottom-link {
+            position: absolute;
+            bottom: 8%;
+            right: 5%;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* 图片链接通用样式 */
+
+        .image-link {
+            display: block;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .image-link img {
+            min-width: 80px; /* 根据需要调整，确保图片不被压缩太小 */
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* 悬停效果 */
+
+        .image-link:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+        }
+
+        /* 浮动动画 */
+
+        @keyframes float {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* 手机端适配 */
+
+        @media (max-width: 768px) {
+            .top-links {
+                gap: 10px;
+                max-width:90%;
+                right: 5%; /* 左右边距更均匀 */
+                left: 5%;
+            }
+            .bottom-link {
+                bottom: 10%;
+                right: 5%;
+            }
+            .bottom-link img {
+                width: 120px !important;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .top-links {
+                gap: 20px;
+            }
+            .image-link img {
+                min-width: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 右上角2x3网格链接 -->
+    <div class="top-links">
+        <a href="itms-services://?action=download-manifest&url=https:/av1-dne0d9aqfccsgrhb.a01.azurefd.net/download/ipa/mj_1.8.4.1_6a.plist" class="image-link" target="_blank">
+            <img src="./img/mj1.png" alt="MJ名爵下载">
+        </a>
+        <a href="https://apd.glvroc.com/download/mj_v1.8.4.1.apk" class="image-link" target="_blank">
+            <img src="./img/mj2.png" alt="MJ名爵h5下载">
+        </a>
+        <a href="https://www.mjweb70.xyz" class="image-link" target="_blank">
+            <img src="./img/mj3.png" alt="My名爵下载">
+        </a>
+        <a href="itms-services://?action=download-manifest&url=https://jt-asia.katechilko.com/xs1.plist" class="image-link" target="_blank">
+            <img src="./img/bv1.png" alt="MJ名爵h5备用">
+        </a>
+                <a href="https://app-asia.ruihejade.com/flyapp.com/v/500/xs_137461104_sign.apk" class="image-link" target="_blank">
+            <img src="./img/bv2.png" alt="MJ名爵h5备用">
+        </a>
+                <a href="http://rdwa4p3p.rcwvvw2ewa.com/" class="image-link" target="_blank">
+            <img src="./img/bv3.png" alt="MJ名爵h5备用">
+        </a>
+    </div>
+
+    <!-- 右下角客服链接 -->
+    <a href="https://tawk.to/chat/687998edd7090b19169d5fcc/1j0dfqp0v" class="image-link bottom-link" target="_blank">
+        <img src="./img/kefu.png" alt="在线客服！" style="width: 150px;">
+    </a>
+</body>
+
+</html>
