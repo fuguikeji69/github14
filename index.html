@@ -6,112 +6,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>有钱人的俱乐部</title>
     <style>
-        /* 基础样式重置 */
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    min-height: 100vh; /* 确保body至少占满屏幕高度 */
+    width: 100vw; /* 确保body占满屏幕宽度 */
+    /* 关键修改：覆盖全屏 + 居中 + 固定背景 */
+    background: url('./img/bj1.jpg') no-repeat center center; 
+    background-size: cover; /* 核心！图片缩放覆盖全屏，保持比例 */
+    background-attachment: fixed; /* 滚动时背景固定（可保留） */
+    background-color: #000; /*  fallback颜色（极少情况显示） */
+    position: relative;
+    /* 去掉overflow: hidden！否则内容超出屏幕会无法滚动 */
+    font-family: Arial, "Microsoft Yahei", sans-serif;
+}
 
-        body {
-            min-height: 100vh;
-            /* 关键修改：自适应宽度并贴着底部 */
-            background: url('./img/bj1.jpg') no-repeat bottom center;
-            background-size: contain;
-            background-attachment: fixed;
-            background-color: #000; /* 背景色用于填充空白区域 */
-            position: relative;
-            overflow: hidden;
-            font-family: Arial, "Microsoft Yahei", sans-serif;
-        }
+/* 右上角链接容器 */
+.top-links {
+    position: absolute;
+    top: 15%;
+    right: 3%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 70%;
+    min-width: 300px;
+    width: auto;
+}
 
-        /* 右上角链接容器 */
+/* 右下角链接样式 */
+.bottom-link {
+    position: absolute;
+    bottom: 8%;
+    right: 5%;
+    animation: float 2s ease-in-out infinite;
+}
 
-        .top-links {
-            position: absolute;
-            top: 3%;
-            right: 3%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            max-width: 70%;
-            min-width: 300px;
-            width: auto;
-        }
+/* 图片链接通用样式 */
+.image-link {
+    display: block;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
 
-        /* 右下角链接样式 */
+.image-link img {
+    min-width: 80px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 
-        .bottom-link {
-            position: absolute;
-            bottom: 8%;
-            right: 5%;
-            animation: float 2s ease-in-out infinite;
-        }
+/* 悬停效果 */
+.image-link:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
 
-        /* 图片链接通用样式 */
+/* 浮动动画 */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
 
-        .image-link {
-            display: block;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-        }
+/* 手机端适配 */
+@media (max-width: 768px) {
+    .top-links {
+        gap: 10px;
+        max-width: 90%;
+        right: 5%;
+        left: 5%;
+    }
+    .bottom-link {
+        bottom: 10%;
+        right: 5%;
+    }
+    .bottom-link img {
+        width: 120px !important;
+    }
+}
 
-        .image-link img {
-            min-width: 80px;
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        /* 悬停效果 */
-
-        .image-link:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-        }
-
-        /* 浮动动画 */
-
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        /* 手机端适配 */
-
-        @media (max-width: 768px) {
-            .top-links {
-                gap: 10px;
-                max-width:90%;
-                right: 5%;
-                left: 5%;
-            }
-            
-            .bottom-link {
-                bottom: 10%;
-                right: 5%;
-            }
-            
-            .bottom-link img {
-                width: 120px !important;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .top-links {
-                gap: 20px;
-            }
-            
-            .image-link img {
-                min-width: 60px;
-            }
-        }
+@media (min-width: 1200px) {
+    .top-links {
+        gap: 20px;
+    }
+    .image-link img {
+        min-width: 60px;
+    }
+}
     </style>
 </head>
 
